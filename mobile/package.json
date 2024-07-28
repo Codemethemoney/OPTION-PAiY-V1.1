@@ -1,0 +1,31 @@
+{
+  "name": "paiy-financial-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "test:coverage": "jest --coverage",  // 1. Test Coverage
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "build:ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios",  // 2. Production Builds
+    "typecheck": "tsc --noEmit", // 3. Type Checking
+    "version:bump": "npm version patch && git add . && git commit -m \"chore: bump version\" && git push", // 4. Version Bump
+    "version:release": "standard-version", // 4. Changelog Generation
+    "audit": "npm audit", // 5. Security Audit
+    "build:staging": "ENVFILE=.env.staging react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res", // 6. Environment-Specific Build
+    "build:production": "ENVFILE=.env.production react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "icons": "react-native-make", // 7. App Icons and Splash Screens
+    "profile": "react-native profile-hermes", // 8. Performance Profiling
+    "deploy:android": "cd android && ./gradlew assembleRelease && ./gradlew bundleRelease",
+    "deploy:ios": "fastlane ios deploy", // 9. Automated Deployment (Example with fastlane)
+    "docs": "jsdoc -c jsdoc.json", // 10. API Documentation (using JSDoc)
+    "e2e": "detox test", // 11. End-to-End Tests (using Detox)
+    "coverage:report": "jest --coverage && open coverage/lcov-report/index.html", // 12. Test Coverage Report
+    "audit:a11y": "react-native run-android && accessibility-insights --apk path/to/your/app.apk", // 13. Accessibility Audit
+    "analyze:bundle": "npx react-native-bundle-visualizer", // 14. Bundle Size Analysis
+    "db:migrate": "alembic upgrade head" // 15. Database Migrations (using Alembic)
+  },
+  // ... (dependencies and devDependencies remain the same)
+}

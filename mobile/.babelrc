@@ -1,0 +1,36 @@
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "extensions": [".ios.js", ".android.js", ".js", ".json", ".ts", ".tsx"], // 1. TypeScript Support
+        "alias": {
+          "@components": "./src/components",
+          "@screens": "./src/screens",
+          // ... other aliases ...
+        }
+      }
+    ],
+    "react-native-reanimated/plugin",
+    "@babel/plugin-proposal-decorators", // 3. Decorators Support
+    ["@babel/plugin-transform-runtime", { "regenerator": true }], // 6. Async/Await
+    "@babel/plugin-proposal-optional-chaining", // 7. Optional Chaining
+    "@babel/plugin-proposal-nullish-coalescing-operator", // 7. Nullish Coalescing
+    "@babel/plugin-proposal-class-properties", // 8. Class Properties
+    ["@babel/plugin-proposal-pipeline-operator", { "proposal": "minimal" }], // Optional: Pipeline Operator
+    "babel-plugin-transform-remove-console"  // 4. Remove console logs in production
+  ],
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"] 
+    },
+    "development": {
+      "plugins": [
+        // For debugging, remove or comment out this line in production
+        ["@babel/plugin-transform-react-jsx-source", { "runtime": "automatic" }],
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+## Setup Instructions
+
+1. Install Xcode from the Mac App Store
+2. Open the `.xcodeproj` or `.xcworkspace` file in this directory with Xcode
+3. Install CocoaPods dependencies (if using): Run `pod install` in the terminal
+4. Build and run the project on a simulator or physical device
+
+## TODO
+
+- [ ] Initialize the basic iOS project structure
+- [ ] Set up CocoaPods or Swift Package Manager for dependency management
+- [ ] Implement the main view controllers and basic UI
+- [ ] Set up navigation flow between screens
+- [ ] Implement network layer for API calls to the backend
+- [ ] Add user authentication functionality
+- [ ] Implement local data persistence (Core Data or Realm)
+- [ ] Set up CI/CD for iOS builds (e.g., using Fastlane)
+- [ ] Write unit and UI tests
+- [ ] Implement push notifications
+- [ ] Optimize for different iOS devices and orientations
+
+## Development Guidelines
+
+- Follow Swift style guidelines and best practices
+- Use Swift UI for new view implementations where possible
+- Implement proper error handling and logging
+- Ensure accessibility features are implemented
+- Keep the app's UI consistent with iOS Human Interface Guidelines
+
+## Contributing
+
+Please refer to the main project README for contribution guidelines.
+
+## License
+
+[Insert your license information here]
